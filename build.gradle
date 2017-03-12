@@ -1,6 +1,15 @@
 group 'alexjpo'
 version '1.0-SNAPSHOT'
 
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.2.RELEASE")
+    }
+}
+
 apply plugin: 'java'
 apply plugin: 'idea'
 apply plugin: 'spring-boot'
@@ -16,12 +25,9 @@ repositories {
 }
 
 dependencies {
-    compile 'ch.qos.logback:logback-classic:1.1.3'
-    compile 'org.springframework:spring-webmvc:4.1.6.RELEASE'
-    compile("org.springframework.boot:spring-boot-starter-controller:1.4.4.RELEASE")
-    compile ("org.springframework.boot:spring-boot-starter-thymeleaf")
-    compile 'javax.servlet:servlet-api:jar:2.5'
-    compile 'javax.servlet:jstl:jar:1.2'
+
+    compile("org.springframework.boot:spring-boot-starter-thymeleaf")
+
 
     //providedCompile group: 'javax.servlet', name: 'javax.servlet-api', version: '3.0.1'
 
