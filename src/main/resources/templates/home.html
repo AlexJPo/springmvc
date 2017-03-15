@@ -12,7 +12,10 @@
         <form name="form" th:action="@{/home}" th:object="${userModel}" action="/home" method="POST">
             <fieldset>
                 <input class="form-control" type="text" name="username" th:field="*{userName}" value="" placeholder="Username" />
+                <span th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}"></span>
+
                 <input class="form-control" type="password" name="password" th:field="*{password}" placeholder="Password" />
+                <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>
             </fieldset>
             <input type="submit" id="login" value="Login" class="btn btn-primary" />
         </form>
